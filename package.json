@@ -1,0 +1,68 @@
+{
+  "name": "react-native-schedule",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-native start",
+    "lint": "standard | snazzy",
+    "update": "updtr",
+    "precommit": "git diff --name-only --cached --relative | grep '\\.jsx\\?$' | xargs standard | snazzy; if [ $? -ne 0 ]; then exit 1; fi",
+    "test": "npm run lint"
+  },
+  "pre-commit": {
+    "run": [
+      "precommit"
+    ],
+    "silent": true
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "global": [
+      "__DEV__",
+      "FormData",
+      "requestAnimationFrame",
+      "alert",
+      "setImmediate",
+      "fetch"
+    ],
+    "ignore": [
+      "dist/",
+      "mock/",
+      "src/",
+      "node_modules/"
+    ]
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leecade/react-native-schedule.git"
+  },
+  "keywords": [
+    "react-component",
+    "react-native",
+    "rn",
+    "cal",
+    "calendar",
+    "schedule",
+    "android",
+    "ios"
+  ],
+  "author": "leecade <leecade@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leecade/react-native-schedule/issues"
+  },
+  "homepage": "https://github.com/leecade/react-native-schedule#readme",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "enzyme": "^2.4.1",
+    "rimraf": "^2.5.4",
+    "snazzy": "^5.0.0",
+    "standard": "^8.1.0",
+    "updtr": "^0.2.1"
+  }
+}
